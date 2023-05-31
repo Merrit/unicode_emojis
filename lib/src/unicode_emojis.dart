@@ -8,22 +8,24 @@ class UnicodeEmojis {
 
   /// Returns a list of emojis that match the given [query].
   static List<Emoji> search(String query) {
-    final String lowerQuery = query.toLowerCase();
+    final List<String> queryTerms = query
+        .split(' ')
+        .map((term) => term.toLowerCase())
+        .toList()
+      ..removeWhere((term) => term.isEmpty);
 
     return allEmojis
-        .where((emoji) =>
-            emoji.category.description.toLowerCase().contains(lowerQuery) ||
-            emoji.name.toLowerCase().contains(lowerQuery) ||
-            emoji.shortName.toLowerCase().contains(lowerQuery) ||
+        .where((emoji) => queryTerms.every((term) =>
+            emoji.category.description.toLowerCase().contains(term) ||
+            emoji.name.toLowerCase().contains(term) ||
+            emoji.shortName.toLowerCase().contains(term) ||
             emoji.shortNames
                 .map((shortName) => shortName.toLowerCase())
-                .contains(lowerQuery) ||
-            emoji.subcategory.toLowerCase().contains(lowerQuery) ||
-            emoji.text?.toLowerCase().contains(lowerQuery) == true ||
-            emoji.texts
-                    ?.map((text) => text.toLowerCase())
-                    .contains(lowerQuery) ==
-                true)
+                .contains(term) ||
+            emoji.subcategory.toLowerCase().contains(term) ||
+            emoji.text?.toLowerCase().contains(term) == true ||
+            emoji.texts?.map((text) => text.toLowerCase()).contains(term) ==
+                true))
         .toList();
   }
 }
