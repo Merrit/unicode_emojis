@@ -1,3 +1,8 @@
+## 0.4.0
+
+- Improved the speed of the search algorithm.
+- Added an option to limit the number of search results.
+
 ## 0.3.0
 
 - Search terms containing extra whitespace are now trimmed.
