@@ -8,7 +8,7 @@ void main() {
         final emojis = UnicodeEmojis.search('blue');
         expect(
           emojis.map((emoji) => emoji.emoji),
-          ['💙', '🩵', '🫐', '🚙', '📘', '🔵', '🟦', '🔷', '🔹'],
+          ['📘', '💙', '🚙', '🫐', '🔵', '🔷', '🟦', '🩵', '🔹'],
         );
       });
 
@@ -16,7 +16,7 @@ void main() {
         final emojis = UnicodeEmojis.search('  blue');
         expect(
           emojis.map((emoji) => emoji.emoji),
-          ['💙', '🩵', '🫐', '🚙', '📘', '🔵', '🟦', '🔷', '🔹'],
+          ['📘', '💙', '🚙', '🫐', '🔵', '🔷', '🟦', '🩵', '🔹'],
         );
       });
 
@@ -24,7 +24,7 @@ void main() {
         final emojis = UnicodeEmojis.search('blue  ');
         expect(
           emojis.map((emoji) => emoji.emoji),
-          ['💙', '🩵', '🫐', '🚙', '📘', '🔵', '🟦', '🔷', '🔹'],
+          ['📘', '💙', '🚙', '🫐', '🔵', '🔷', '🟦', '🩵', '🔹'],
         );
       });
 
@@ -32,7 +32,7 @@ void main() {
         final emojis = UnicodeEmojis.search(' blue ');
         expect(
           emojis.map((emoji) => emoji.emoji),
-          ['💙', '🩵', '🫐', '🚙', '📘', '🔵', '🟦', '🔷', '🔹'],
+          ['📘', '💙', '🚙', '🫐', '🔵', '🔷', '🟦', '🩵', '🔹'],
         );
       });
 
@@ -40,55 +40,55 @@ void main() {
         final emojis = UnicodeEmojis.search('  blue  ');
         expect(
           emojis.map((emoji) => emoji.emoji),
-          ['💙', '🩵', '🫐', '🚙', '📘', '🔵', '🟦', '🔷', '🔹'],
+          ['📘', '💙', '🚙', '🫐', '🔵', '🔷', '🟦', '🩵', '🔹'],
         );
       });
 
       test('query with multiple words', () {
-        final emojis = UnicodeEmojis.search('blue heart');
+        final emojis = UnicodeEmojis.search('blue heart', limit: 10);
         expect(
           emojis.map((emoji) => emoji.emoji),
-          ['💙', '🩵'],
+          ['💙', '🩵', '🫀', '💓', '🖤', '♥️', '📘', '🚙', '🫐', '💔'],
         );
       });
 
       test('query with multiple words with leading and trailing spaces', () {
-        final emojis = UnicodeEmojis.search(' blue heart ');
+        final emojis = UnicodeEmojis.search(' blue heart ', limit: 10);
         expect(
           emojis.map((emoji) => emoji.emoji),
-          ['💙', '🩵'],
+          ['💙', '🩵', '🫀', '💓', '🖤', '♥️', '📘', '🚙', '🫐', '💔'],
         );
       });
 
       test('query with multiple words with multiple spaces', () {
-        final emojis = UnicodeEmojis.search('blue    heart');
+        final emojis = UnicodeEmojis.search('blue    heart', limit: 10);
         expect(
           emojis.map((emoji) => emoji.emoji),
-          ['💙', '🩵'],
+          ['💙', '🩵', '🫀', '💓', '🖤', '♥️', '📘', '🚙', '🫐', '💔'],
         );
       });
 
       test('query "index pointing" returns expected emojis', () {
-        final emojis = UnicodeEmojis.search('index pointing');
+        final emojis = UnicodeEmojis.search('index pointing', limit: 10);
         expect(
           emojis.map((emoji) => emoji.emoji),
-          ['👈', '👉', '👆', '👇', '☝️', '🫵'],
+          ['🫵', '👇', '👈', '👉', '👆', '☝️', '⤵️', '⤴️', '⏬', '⏪'],
         );
       });
 
       test('query with reversed words', () {
-        final emojis = UnicodeEmojis.search('pointing index');
+        final emojis = UnicodeEmojis.search('pointing index', limit: 10);
         expect(
           emojis.map((emoji) => emoji.emoji),
-          ['👈', '👉', '👆', '👇', '☝️', '🫵'],
+          ['🫵', '👇', '👈', '👉', '👆', '☝️', '⤵️', '⤴️', '⏬', '⏪'],
         );
       });
 
       test('query with capitalized words', () {
-        final emojis = UnicodeEmojis.search('Index Pointing');
+        final emojis = UnicodeEmojis.search('Index Pointing', limit: 10);
         expect(
           emojis.map((emoji) => emoji.emoji),
-          ['👈', '👉', '👆', '👇', '☝️', '🫵'],
+          ['🫵', '👇', '👈', '👉', '👆', '☝️', '⤵️', '⤴️', '⏬', '⏪'],
         );
       });
     });
