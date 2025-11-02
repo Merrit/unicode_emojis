@@ -8,7 +8,7 @@ be fresh and up to date. 🙌
 
 ## Features
 
-- Contains over 3,000 emojis from Unicode 15.0. 😍
+- Contains over 3,000 emojis from Unicode 16.0. 😍
 - Supports skin tone variations for human emojis and multi-person emojis. 🙋🏻‍♂️🙋🏼‍♀️🙋🏽‍♂️🙋🏾‍♀️🙋🏿‍♂️
 - Provides an `Emoji` class that has all the info you need for each emoji. 🚀
 - Access everything through the `UnicodeEmojis` class. 🎉
