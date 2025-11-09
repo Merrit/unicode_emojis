@@ -1,3 +1,7 @@
+## 0.5.0
+
+- Update to Unicode 16.0 emoji data.
+
 ## 0.4.0
 
 - Improved the speed of the search algorithm.
