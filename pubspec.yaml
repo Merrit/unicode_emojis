@@ -1,5 +1,5 @@
 name: unicode_emojis
-description: Unicode 15.0 emojis with metadata, search and skin tone support.
+description: Unicode 16.0 emojis with metadata, search and skin tone support.
 version: 0.5.0
 repository: https://github.com/merrit/unicode_emojis
 funding:
