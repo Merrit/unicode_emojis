@@ -1,3 +1,7 @@
+## 0.6.0
+
+- Update to Unicode 17.0 emoji data.
+
 ## 0.5.1
 
 - Reference the correct Unicode version in the description.
