@@ -1,6 +1,6 @@
 name: unicode_emojis
-description: Unicode 16.0 emojis with metadata, search and skin tone support.
-version: 0.5.1
+description: Unicode 17.0 emojis with metadata, search and skin tone support.
+version: 0.6.0
 repository: https://github.com/merrit/unicode_emojis
 funding:
   - https://merritt.codes/support/
